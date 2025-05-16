@@ -259,6 +259,12 @@ function setup() {
     el.closeIcon.addEventListener('click', togglePause);
     el.noBtn.addEventListener('click', togglePause);
 
+    history.pushState({ page: 1 }, "", "");
+    window.onpopstate = (event) => {
+        togglePause();
+        window.history.pushState({ page: 1 }, "", "");
+    };
+
 }
 
 

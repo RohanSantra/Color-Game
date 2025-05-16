@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Catcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <!-- Game over msg box -->
+    <div class="game-over-container">
+        <div class="score-container">
+            <h2 class="end-score">23</h2>
+            <h2>Score</h2>
+        </div>
+        <div class="navigation-btn">
+            <button class="play-again">Play Again</button>
+            <button class="exit">Exit</button>
+        </div>
+    </div>
+
+    <!-- Exit game msg box -->
+    <div class="exit-game-container">
+        <i class="ri-close-large-line quitIcon"></i>
+        <p>Do you want to Exit the game ?</p>
+        <div class="buttons">
+            <button class="yes">
+                Yes 🥹
+            </button>
+            <button class="no">
+                No 😀
+            </button>
+        </div>
+    </div>
+
+    <!-- Staring screen -->
+    <div class="start-screen">
+        <div class="title">
+            <h1 class="title1">Color</h1>
+            <h1 class="title2">Catcher</h1>
+            <h3>Catch boxes with the same color as your catcher!</h3>
+            <button class="start">Start</button>
+        </div>
+    </div>
+
+    <!-- Game screen -->
+    <div class="game-area">
+        <div class="game-screen">
+            <div class="catcher"></div>
+            <div class="info-container">
+                <div class="score-box">
+                    <h2>Score : </h2>
+                    <h2 class="score">0</h2>
+                </div>
+                <div class="lives-box">
+                    <h2>Lives : </h2>
+                    <h2 class="lives">3</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

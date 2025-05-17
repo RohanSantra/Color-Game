@@ -54,9 +54,11 @@ function hide(el) {
 }
 
 function togglePause() {
-    isPaused = !isPaused;
-    el.exitGameContainer.classList.toggle('display');
-    el.overlay.classList.toggle('display');
+    if (getComputedStyle(el.gameScreen).display === 'flex' && getComputedStyle(el.gameOverContainer).display === 'none') {
+        isPaused = !isPaused;
+        el.exitGameContainer.classList.toggle('display');
+        el.overlay.classList.toggle('display');
+    }
 }
 
 function resetToStartScreen(element) {
@@ -259,11 +261,12 @@ function setup() {
     el.closeIcon.addEventListener('click', togglePause);
     el.noBtn.addEventListener('click', togglePause);
 
-    history.pushState({ page: 1 }, "", "");
-    window.onpopstate = (event) => {
+    // Phone/browser back button
+    window.history.pushState({ page: 1 }, "", "");
+    window.addEventListener("popstate", () => {
         togglePause();
         window.history.pushState({ page: 1 }, "", "");
-    };
+    });
 
 }
 
